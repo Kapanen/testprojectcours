@@ -1,4 +1,4 @@
-import add from '../../src/add.js';
+import add from '../src/add.js';
 
 test('Kahden positiivisen kokonaisluvun lisääminen', () => {
     expect(add(1, 1)).toBe(2);
@@ -17,11 +17,11 @@ test('Positiivisen ja negatiivisen kokonaisluvun lisääminen', () => {
 });
 
 test('Kahden positiivisen desimaaliluvun lisääminen', () => {
-    expect(add(1.53, 2.41)).toBe(3.94);
+    expect(add(1.503, 2.401)).toBe(3.904);
 });
 
 test('Kahden positiivisen desimaaliluvun lisääminen', () => {
-    expect(add(0.1, 0.1)).toBe(0.3);
+    expect(add(0.1, 0.1)).toBe(0.2);
 });
 
 test('Kahden positiivisen irrationaaliluvun lisääminen', () => {
@@ -44,19 +44,18 @@ test('Error kun augend on totuusarvo', () => {
     expect(add(true, 1).toThrow(new Error('Parameter can´t be boolean')));
 });
 
-test('Error kun augend on symboli', () => {
-    expect(add( Symbol("Math.PI"), 1).toThrow(new Error('Parameter can´t be symbol')));
-});
+test('Error when augend is a string', () => {
+    expect(() => add("Math.PI", 1)).toThrowError('Parameter can´t be string');});
 
 test('Error kun annetaan tyhjä parametri', () => {
     expect(add(1,).toThrow(new Error('Parameter can´t be empty')));
-})
+});
 
 test('Error kun annetaan kolme parametria', () => {
     expect(add(1,3,8).toThrow(new Error('Too many parameters')));
-})
+});
 
 test('Error kun annetaan yksi parametri', () => {
     expect(add(3).toThrow(new Error('Too few parameters')));
-})
+});
 

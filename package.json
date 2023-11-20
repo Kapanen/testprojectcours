@@ -1,12 +1,36 @@
 {
   "name": "testprojectcours",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
+    "coveralls": "^3.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kapanen/testprojectcours.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kapanen/testprojectcours/issues"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "src/.internal/*"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/src/.internal/*"
+    ]
+  },
+  "homepage": "https://github.com/Kapanen/testprojectcours#readme",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }

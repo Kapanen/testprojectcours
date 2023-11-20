@@ -1,4 +1,4 @@
-import toString from '../../src/toString.js';
+import toString from '../src/toString.js';
 
 test('stringi säilyy stringinä', () => {
     excpect(toString('test').toBe('test'));

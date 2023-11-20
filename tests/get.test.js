@@ -1,4 +1,4 @@
-import get from '../../src/get.js';
+import get from '../src/get.js';
 
 const object = { 'a': [{ 'b': { 'c': 3 } }] }
 

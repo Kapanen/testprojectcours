@@ -1,4 +1,4 @@
-import countBy from '../../src/countBy.js';
+import countBy from '../src/countBy.js';
 
 const users1 = [
     { 'user': 'barney', 'active': true },

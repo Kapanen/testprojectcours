@@ -1,4 +1,4 @@
-import isEmpty from '../../src/isEmpty.js';
+import isEmpty from '../src/isEmpty.js';
 
 test('tyhjällä arvolla saadaan arvon totuus arvo true', () => {
     expect(isEmpty().toBe(true));
@@ -17,5 +17,9 @@ test('array arvolla saadaan arvoksi false', () => {
 });
 
 test('stringit antavat arvon false', () => {
-    expect(isEmpty('abc').toBe)
-})
+    expect(isEmpty('abc').toBe(false));
+});
+
+test('objecti jonka arvo on 1 antaa arvoksi falsen sillä se ei ole boolean arvo', () => {
+    expect(isEmpty({'a' : 1}).toBe(false));
+});
