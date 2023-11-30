@@ -25,37 +25,37 @@ test('Kahden positiivisen desimaaliluvun lisääminen', () => {
 });
 
 test('Kahden positiivisen irrationaaliluvun lisääminen', () => {
-    expect(add(Math.PI, Math.PI/2)).toBe(Math.PI + (Math.PI/2));
+    expect(add(Math.PI, Math.PI / 2)).toBe(Math.PI + (Math.PI / 2));
 });
 
 test('Luvun vastaluvulla lisääminen antaa arvon 0', () => {
-    expect(add(Math.PI, -Math.PI/2)).toBe(Math.PI + (-Math.PI/2));
+    expect(add(Math.PI, -Math.PI / 2)).toBe(Math.PI + (-Math.PI / 2));
 });
 
 test('Error kun augend on string', () => {
-    expect(add("Math.PI", 1).toThrow(new Error('Parameter can´t be string')));
+    expect(() => add("Math.PI", 1)).toThrow(new Error('Parameter can\'t be string'));
 });
 
 test('Error kun added on string', () => {
-    expect(add(1, "Math.PI").toThrow(new Error('Parameter can´t be string')));
+    expect(() => add(1, "Math.PI")).toThrow(new Error('Parameter can\'t be string'));
 });
 
 test('Error kun augend on totuusarvo', () => {
-    expect(add(true, 1).toThrow(new Error('Parameter can´t be boolean')));
+    expect(() => add(true, 1)).toThrow(new Error('Parameter can\'t be boolean'));
 });
 
 test('Error when augend is a string', () => {
-    expect(() => add("Math.PI", 1)).toThrowError('Parameter can´t be string');});
+    expect(() => add("Math.PI", 1)).toThrowError('Parameter can\'t be string');
+});
 
 test('Error kun annetaan tyhjä parametri', () => {
-    expect(add(1,).toThrow(new Error('Parameter can´t be empty')));
+    expect(() => add(1)).toThrow(new Error('Parameter can\'t be empty'));
 });
 
 test('Error kun annetaan kolme parametria', () => {
-    expect(add(1,3,8).toThrow(new Error('Too many parameters')));
+    expect(() => add(1, 3, 8)).toThrow(new Error('Too many parameters'));
 });
 
 test('Error kun annetaan yksi parametri', () => {
-    expect(add(3).toThrow(new Error('Too few parameters')));
+    expect(() => add(3)).toThrow(new Error('Too few parameters'));
 });
-

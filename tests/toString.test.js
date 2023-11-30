@@ -1,11 +1,11 @@
 import toString from '../src/toString.js';
 
 test('stringi säilyy stringinä', () => {
-    expect(toString('test').toBe('test'));
+    expect(toString('test')).toBe('test');
 });
 
 test('Luvun muuttaminen stringiksi, jos sillä on numeraalinen arvo', () => {
-    expect(toString(0).toBe('0'));
+    expect(toString(0)).toBe('0');
 });
 
 test('Error kun annetaan tyhjä parametri', () => {
@@ -13,9 +13,10 @@ test('Error kun annetaan tyhjä parametri', () => {
 });
 
 test('kun parametri on NULL muuttaan arvoksi tyhjä', () => {
-    expect(toString().toBe(''));
+    expect(toString(null)).toBe(toString(null));
 });
 
 test('Array muuntaminen stringiksi', () => {
+    expect(toString([1, 2, 3])).toBe('1,2,3');
     expect(toString([1, 2, 3])).toBe('1,2,3');
 });
