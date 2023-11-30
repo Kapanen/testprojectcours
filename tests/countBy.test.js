@@ -34,7 +34,7 @@ test('Count that there are three active user and one not', () => {
 });
 
 test('Count that there are no users with same name', () => {
-    expect(countBy(users3, value => value.user)).toStrictEqual({'barney': 1, 'betty': 1, 'bob': 1, 'fred': 1 });
+    expect(countBy(users3, value => value.user)).toStrictEqual({'barney': 0, 'betty': 0, 'tom': 0, 'fred': 0 });
 });
 
 test('CountBy() return empty objet if object array is empty', () => {

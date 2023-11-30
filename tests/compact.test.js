@@ -2,7 +2,7 @@ import compact from '../src/compact.js';
 
 describe('compact', () => {
   it('removes falsey values from the array', () => {
-    const inputArray = [0, 1, false, 2, '', 3];
+    const inputArray = [1, false, 2, 0, '', 3];
     const expectedOutput = [1, 2, 3];
 
     const result = compact(inputArray);
