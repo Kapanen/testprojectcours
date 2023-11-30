@@ -1,4 +1,4 @@
-import filter from '../src/filter.js'; // Update the path accordingly
+import filter from '../src/filter.js';
 
 describe('filter', () => {
   it('filters elements based on the provided predicate', () => {
