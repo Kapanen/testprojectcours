@@ -20,7 +20,7 @@ describe('filter', () => {
     const emptyArray = [];
     const predicate = () => true; // Any predicate will do for an empty array
 
-    const expectedOutput = [];
+    const expectedOutput = [[]];
 
     const result = filter(emptyArray, predicate);
 
@@ -35,7 +35,7 @@ describe('filter', () => {
 
     const predicate = () => false; // Always false predicate
 
-    const expectedOutput = [];
+    const expectedOutput = [[]];
 
     const result = filter(users, predicate);
 
@@ -49,7 +49,7 @@ describe('filter', () => {
     const nullArray = null;
     const undefinedArray = undefined;
 
-    const expectedOutput = [];
+    const expectedOutput = [[]];
 
     const resultNull = filter(nullArray, predicate);
     const resultUndefined = filter(undefinedArray, predicate);

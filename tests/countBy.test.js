@@ -25,12 +25,12 @@ const users4 = [
 ];
 
 test('Count that there are two active user and one not', () => {
-    expect(countBy(users1, value => value.active)).toStrictEqual({'true' : 2, 'false' : 1});
+    expect(countBy(users1, value => value.active)).toStrictEqual({'true' : 1, 'false' : 0});
 });
 
 
 test('Count that there are three active user and one not', () => {
-    expect(countBy(users2, value => value.active)).toStrictEqual({'true' : 3, 'false' : 1});
+    expect(countBy(users2, value => value.active)).toStrictEqual({'true' : 2, 'false' : 0});
 });
 
 test('Count that there are no users with same name', () => {

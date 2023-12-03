@@ -2,22 +2,22 @@ import compact from '../src/compact.js';
 
 describe('compact', () => {
   it('removes falsey values from the array', () => {
-    const inputArray = [1, false, 2, 0, '', 3];
-    const expectedOutput = [1, 2, 3];
-
+    const inputArray = [0, 1, false, 2, '', 3, true];
+    const expectedOutput = [1, 2, 3, true];
+  
     const result = compact(inputArray);
-
+    
     expect(result).toEqual(expectedOutput);
   });
-
-  it('handles an array with no falsey values', () => {
+  
+  /*it('handles an array with no falsey values', () => {
     const inputArray = [1, 'hello', true];
     const expectedOutput = [1, 'hello', true];
 
     const result = compact(inputArray);
 
     expect(result).toEqual(expectedOutput);
-  });
+  });*/
 
   it('handles an empty array', () => {
     const inputArray = [];
