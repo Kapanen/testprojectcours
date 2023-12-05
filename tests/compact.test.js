@@ -6,7 +6,7 @@ describe('compact', () => {
     const expectedOutput = [1, 2, 3, true];
   
     const result = compact(inputArray);
-    
+
     expect(result).toEqual(expectedOutput);
   });
   

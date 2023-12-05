@@ -25,16 +25,16 @@ const users4 = [
 ];
 
 test('Count that there are two active user and one not', () => {
-    expect(countBy(users1, value => value.active)).toStrictEqual({'true' : 1, 'false' : 0});
+    expect(countBy(users1, value => value.active)).toStrictEqual({'true' : 2, 'false' : 1});
 });
 
 
 test('Count that there are three active user and one not', () => {
-    expect(countBy(users2, value => value.active)).toStrictEqual({'true' : 2, 'false' : 0});
+    expect(countBy(users2, value => value.active)).toStrictEqual({'true' : 3, 'false' : 1});
 });
 
 test('Count that there are no users with same name', () => {
-    expect(countBy(users3, value => value.user)).toStrictEqual({'barney': 0, 'betty': 0, 'tom': 0, 'fred': 0 });
+    expect(countBy(users3, value => value.user)).toStrictEqual({'barney': 1, 'betty': 1, 'tom': 1, 'fred': 1 });
 });
 
 test('CountBy() return empty objet if object array is empty', () => {

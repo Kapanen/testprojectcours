@@ -9,11 +9,11 @@ test('Luvun muuttaminen stringiksi, jos sillä on numeraalinen arvo', () => {
 });
 
 test('Error kun annetaan tyhjä parametri', () => {
-    expect(() => toString()).not.toThrow(new Error('Parameter can´t be empty'));
+    expect(() => toString()).toThrow(new Error('Parameter can´t be empty'));
 });
 
 test('kun parametri on NULL muuttaan arvoksi tyhjä', () => {
-    expect(toString(null)).toBe(toString(null));
+    expect(toString(null)).toBe(toString(''));
 });
 
 test('Array muuntaminen stringiksi', () => {

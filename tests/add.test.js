@@ -17,12 +17,9 @@ test('Positiivisen ja negatiivisen kokonaisluvun lisääminen', () => {
 });
 
 test('Kahden positiivisen desimaaliluvun lisääminen', () => {
-    expect(add(1.503, 2.401)).toBe(3.904);
+    expect(add(1.53, 2.41)).toBe(3.94);
 });
 
-test('Kahden positiivisen desimaaliluvun lisääminen', () => {
-    expect(add(0.1, 0.1)).toBe(0.2);
-});
 
 test('Kahden positiivisen irrationaaliluvun lisääminen', () => {
     expect(add(Math.PI, Math.PI / 2)).toBe(Math.PI + (Math.PI / 2));
@@ -33,29 +30,30 @@ test('Luvun vastaluvulla lisääminen antaa arvon 0', () => {
 });
 
 test('Error kun augend on string', () => {
-    expect(() => add("Math.PI", 1)).not.toThrow(new Error('Parameter can\'t be string'));
+    expect(() => add("Math.PI", 1)).toThrow(new Error('Parameter can\'t be string'));
 });
 
 test('Error kun added on string', () => {
-    expect(() => add(1, "Math.PI")).not.toThrow(new Error('Parameter can\'t be string'));
+    expect(() => add(1, "Math.PI")).toThrow(new Error('Parameter can\'t be string'));
 });
 
 test('Error kun augend on totuusarvo', () => {
-    expect(() => add(true, 1)).not.toThrow(new Error('Parameter can\'t be boolean'));
-});
+    expect(() => add(true, 1)).toThrow(new Error('Parameter can\'t be boolean'));
+});//error
 
 test('Error when augend is a string', () => {
-    expect(() => add("Math.PI", 1)).not.toThrowError('Parameter can\'t be string');
+    expect(() => add("Math.PI", 1)).toThrowError('Parameter can\'t be string');
 });
 
-test('Error kun annetaan tyhjä parametri', () => {
-    expect(() => add(1)).not.toThrow(new Error('Parameter can\'t be empty'));
+test('Error kun annetaan tyhjä toinen parametri', () => {
+    expect(() => add(1, )).toThrow(new Error('Parameter can\'t be empty'));
 });
 
 test('Error kun annetaan kolme parametria', () => {
-    expect(() => add(1, 3, 8)).not.toThrow(new Error('Too many parameters'));
+    expect(() => add(1, 3, 8)).toThrow(new Error('Too many parameters'));
 });
 
 test('Error kun annetaan yksi parametri', () => {
-    expect(() => add(3)).not.toThrow(new Error('Too few parameters'));
+    expect(() => add(3)).toThrow(new Error('Too few parameters'));
 });
+

@@ -6,7 +6,7 @@ test('hakee pathista c:n arvon', () => {
     expect(get(object, 'a[0].b.c')).toBe(3)
 });
 
-test('hakee array muotiisella pathilla c:n arvon ', () => {
+test('hakee array muotoisella pathilla c:n arvon ', () => {
     expect(get(object, ['a', '0', 'b', 'c'])).toBe(3)
 });
 
